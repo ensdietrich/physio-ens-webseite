@@ -270,7 +270,7 @@
         </div>
         <div class="benefit-item">
           <span class="benefit-item__check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
-          <div><h4 data-de="Flexible frühe &amp; späte Termine" data-en="Flexible early &amp; late appointments">Flexible frühe &amp; späte Termine</h4><p data-de="Vormittags-, Abend- und ggf. Samstagstermine – auch für Berufstätige geeignet." data-en="Morning, evening and occasional Saturday slots — well suited to working people.">Vormittags-, Abend- und ggf. Samstagstermine – auch für Berufstätige geeignet.</p></div>
+          <div><h4 data-de="Feste Sprechzeiten" data-en="Regular opening hours">Feste Sprechzeiten</h4><p data-de="Montag bis Freitag vormittags und nachmittags – Termine außerhalb dieser Zeiten nach Vereinbarung." data-en="Monday to Friday, mornings and afternoons — appointments outside these hours by arrangement.">Montag bis Freitag vormittags und nachmittags – Termine außerhalb dieser Zeiten nach Vereinbarung.</p></div>
         </div>
       </div>
     </div>
@@ -347,7 +347,7 @@
 
         <details class="faq-item" data-reveal>
           <summary><span data-de="Zu welchen Zeiten sind Termine möglich?" data-en="What times are appointments available?">Zu welchen Zeiten sind Termine möglich?</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></summary>
-          <div class="faq-item__body"><p data-de="Je nach Wochentag am frühen Vormittag sowie in den späten Nachmittags- und Abendstunden – dienstags und donnerstags bereits ab dem frühen Vormittag. Gegebenenfalls auch samstags." data-en="Depending on the day, early morning as well as late afternoon and evening — Tuesdays and Thursdays already from early morning. Occasionally also on Saturdays.">Je nach Wochentag am frühen Vormittag sowie in den späten Nachmittags- und Abendstunden – dienstags und donnerstags bereits ab dem frühen Vormittag. Gegebenenfalls auch samstags.</p></div>
+          <div class="faq-item__body"><p data-de="Montag bis Freitag von 9 bis 12 Uhr und von 15 bis 18 Uhr. Termine außerhalb dieser Zeiten sind nach Vereinbarung möglich." data-en="Monday to Friday, 9 am to 12 noon and 3 pm to 6 pm. Appointments outside these hours are possible by arrangement.">Montag bis Freitag von 9 bis 12 Uhr und von 15 bis 18 Uhr. Termine außerhalb dieser Zeiten sind nach Vereinbarung möglich.</p></div>
         </details>
 
         <details class="faq-item" data-reveal>
@@ -362,7 +362,7 @@
 
         <details class="faq-item" data-reveal>
           <summary><span data-de="Wo befindet sich die Praxis?" data-en="Where is the practice located?">Wo befindet sich die Praxis?</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></summary>
-          <div class="faq-item__body"><p data-de="Die Praxis entsteht aktuell in Mainz. Die genaue Adresse wird hier ergänzt, sobald der Standort final feststeht." data-en="The practice is currently being established in Mainz. The exact address will be added here once the location is finalised.">Die Praxis entsteht aktuell in Mainz. Die genaue Adresse wird hier ergänzt, sobald der Standort final feststeht.</p></div>
+          <div class="faq-item__body"><p data-de="Die Praxis befindet sich am Oberen Laubenheimer Weg 34, 55131 Mainz (Kettelersiedlung), im 1. Obergeschoss. Die Praxis ist leider nicht barrierefrei. Die Bushaltestelle Bodelschwinghstraße ist etwa 250 m entfernt." data-en="The practice is located at Oberer Laubenheimer Weg 34, 55131 Mainz (Kettelersiedlung), on the first floor. Unfortunately, the practice is not step-free. The Bodelschwinghstraße bus stop is about 250 m away.">Die Praxis befindet sich am Oberen Laubenheimer Weg 34, 55131 Mainz (Kettelersiedlung), im 1. Obergeschoss. Die Praxis ist leider nicht barrierefrei. Die Bushaltestelle Bodelschwinghstraße ist etwa 250 m entfernt.</p></div>
         </details>
       </div>
     </div>
@@ -398,10 +398,9 @@
               <label for="fTime" data-de="Bevorzugte Zeit" data-en="Preferred time">Bevorzugte Zeit</label>
               <select id="fTime" name="time">
                 <option value="" data-de="Keine Angabe" data-en="No preference">Keine Angabe</option>
-                <option value="vormittag" data-de="Früher Vormittag" data-en="Early morning">Früher Vormittag</option>
-                <option value="nachmittag" data-de="Nachmittag" data-en="Afternoon">Nachmittag</option>
-                <option value="abend" data-de="Abend" data-en="Evening">Abend</option>
-                <option value="samstag" data-de="Samstag" data-en="Saturday">Samstag</option>
+                <option value="vormittag" data-de="Vormittag (9–12 Uhr)" data-en="Morning (9 am–12 noon)">Vormittag (9–12 Uhr)</option>
+                <option value="nachmittag" data-de="Nachmittag (15–18 Uhr)" data-en="Afternoon (3–6 pm)">Nachmittag (15–18 Uhr)</option>
+                <option value="vereinbarung" data-de="Außerhalb nach Vereinbarung" data-en="Other times by arrangement">Außerhalb nach Vereinbarung</option>
               </select>
             </div>
           </div>
@@ -426,7 +425,7 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.1-7-11.5A7 7 0 0119 9.5C19 14.9 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.3"/></svg>
             <div>
               <h4 data-de="Adresse" data-en="Address">Adresse</h4>
-              <p><span data-de="Musterstraße 1" data-en="Musterstraße 1">Musterstraße 1</span><br><span data-de="55116 Mainz" data-en="55116 Mainz">55116 Mainz</span></p>
+              <p><span data-de="Oberer Laubenheimer Weg 34" data-en="Oberer Laubenheimer Weg 34">Oberer Laubenheimer Weg 34</span><br><span data-de="55131 Mainz" data-en="55131 Mainz">55131 Mainz</span></p>
             </div>
           </div>
           <div class="info-divider"></div>
@@ -449,8 +448,8 @@
           <div class="info-row">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg>
             <div>
-              <h4 data-de="Terminvergabe" data-en="Scheduling">Terminvergabe</h4>
-              <p data-de="Nach Vereinbarung – je nach Wochentag am frühen Vormittag sowie in den späten Nachmittags- und Abendstunden. Dienstags &amp; donnerstags bereits ab dem frühen Vormittag. Ggf. auch samstags." data-en="By arrangement — depending on the day, early morning as well as late afternoon and evening. Tuesdays &amp; Thursdays already from early morning. Occasionally also Saturdays.">Nach Vereinbarung – je nach Wochentag am frühen Vormittag sowie in den späten Nachmittags- und Abendstunden. Dienstags &amp; donnerstags bereits ab dem frühen Vormittag. Ggf. auch samstags.</p>
+              <h4 data-de="Öffnungszeiten" data-en="Opening hours">Öffnungszeiten</h4>
+              <p data-de="Mo–Fr 9–12 Uhr und 15–18 Uhr. Außerhalb dieser Zeiten nach Vereinbarung." data-en="Mon–Fri 9 am–12 noon and 3–6 pm. Other times by arrangement.">Mo–Fr 9–12 Uhr und 15–18 Uhr. Außerhalb dieser Zeiten nach Vereinbarung.</p>
             </div>
           </div>
         </aside>
@@ -484,7 +483,7 @@
       <div class="footer-col">
         <h5 data-de="Kontakt" data-en="Contact">Kontakt</h5>
         <ul>
-          <li><span data-de="Mainz (genaue Adresse folgt)" data-en="Mainz (exact address to follow)">Mainz (genaue Adresse folgt)</span></li>
+          <li><span data-de="Oberer Laubenheimer Weg 34, 55131 Mainz" data-en="Oberer Laubenheimer Weg 34, 55131 Mainz">Oberer Laubenheimer Weg 34, 55131 Mainz</span></li>
           <li><a href="mailto:info@physiotherapie-ens.de">info@physiotherapie-ens.de</a></li>
           <li><a href="tel:+4961310000000">+49 (0) 6131 000000</a></li>
         </ul>
