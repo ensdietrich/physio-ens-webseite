@@ -32,6 +32,11 @@
       if (value !== null) el.setAttribute("placeholder", value);
     });
 
+    document.querySelectorAll("[data-de-alt]").forEach((el) => {
+      const value = lang === "en" ? el.getAttribute("data-en-alt") : el.getAttribute("data-de-alt");
+      if (value !== null) el.setAttribute("alt", value);
+    });
+
     document.querySelectorAll("[data-de-aria]").forEach((el) => {
       const value = lang === "en" ? el.getAttribute("data-en-aria") : el.getAttribute("data-de-aria");
       if (value !== null) el.setAttribute("aria-label", value);
