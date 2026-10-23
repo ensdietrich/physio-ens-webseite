@@ -139,37 +139,52 @@
     revealEls.forEach((el) => el.classList.add("is-visible"));
   }
 
-  /* ---------------------------- Hero video controls ---------------------------- */
+  /* ---------------------------- Hero video (always playing) ---------------------------- */
+  // The hero video is purely decorative and must always run: no pause button,
+  // no pause for "reduce motion", and automatic restarts whenever a browser stops it.
   const heroVideo = document.getElementById("heroVideo");
-  const videoToggle = document.getElementById("videoToggle");
 
-  if (heroVideo && videoToggle) {
-    if (prefersReducedMotion) {
-      heroVideo.pause();
-      videoToggle.setAttribute("data-state", "paused");
-    }
+  if (heroVideo) {
+    heroVideo.muted = true;
+    heroVideo.defaultMuted = true;
+    heroVideo.setAttribute("muted", "");
 
-    videoToggle.addEventListener("click", () => {
-      if (heroVideo.paused) {
-        heroVideo.play();
-        videoToggle.setAttribute("data-state", "playing");
-        videoToggle.setAttribute("aria-label", root.lang === "en" ? "Pause video" : "Video pausieren");
-      } else {
-        heroVideo.pause();
-        videoToggle.setAttribute("data-state", "paused");
-        videoToggle.setAttribute("aria-label", root.lang === "en" ? "Play video" : "Video abspielen");
-      }
+    let heroInView = true;
+
+    const tryPlay = () => {
+      if (!heroInView || document.hidden || !heroVideo.paused) return;
+      const attempt = heroVideo.play();
+      if (attempt && typeof attempt.catch === "function") attempt.catch(() => {});
+    };
+
+    tryPlay();
+    ["loadedmetadata", "loadeddata", "canplay", "canplaythrough"].forEach((ev) =>
+      heroVideo.addEventListener(ev, tryPlay)
+    );
+
+    // If anything pauses the video while it is visible, start it again.
+    heroVideo.addEventListener("pause", () => {
+      if (heroInView && !document.hidden) window.setTimeout(tryPlay, 150);
     });
 
-    // Pause the hero video once it scrolls out of view to save resources.
+    document.addEventListener("visibilitychange", tryPlay);
+    window.addEventListener("pageshow", tryPlay);
+
+    // Browsers that block autoplay usually allow it after the first interaction.
+    ["pointerdown", "touchstart", "keydown", "scroll"].forEach((ev) =>
+      window.addEventListener(ev, tryPlay, { passive: true })
+    );
+
+    // Pause only while the hero is scrolled out of view (saves battery), resume on return.
     if ("IntersectionObserver" in window) {
       const heroIo = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
-            if (!entry.isIntersecting && !heroVideo.paused) {
+            heroInView = entry.isIntersecting;
+            if (!heroInView && !heroVideo.paused) {
               heroVideo.pause();
-            } else if (entry.isIntersecting && videoToggle.getAttribute("data-state") === "playing" && heroVideo.paused && !prefersReducedMotion) {
-              heroVideo.play();
+            } else {
+              tryPlay();
             }
           });
         },
