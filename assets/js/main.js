@@ -8,7 +8,7 @@
   const BUSINESS = {
     // addressLine1: "Musterstraße 1",
     // addressLine2: "55116 Mainz",
-    // phone: "+49 (0) 6131 000000",
+    // phone: "+49 177 2377368",
     // email: "info@physiotherapie-ens.de",
   };
   void BUSINESS; // placeholder hook for future centralised data-binding
